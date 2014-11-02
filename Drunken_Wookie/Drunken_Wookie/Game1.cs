@@ -18,6 +18,7 @@ namespace Drunken_Wookie
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private SoundPlayer SoundPlayer;
 
         public Game1()
         {
@@ -36,6 +37,7 @@ namespace Drunken_Wookie
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            SoundPlayer = new SoundPlayer();
         }
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace Drunken_Wookie
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            SoundPlayer.loadSounds(Content);
 
             // TODO: use this.Content to load your game content here
         }
