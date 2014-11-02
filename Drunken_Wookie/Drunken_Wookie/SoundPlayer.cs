@@ -52,6 +52,7 @@ namespace Drunken_Wookie
 
             List<SoundEffect> musicSounds = new List<SoundEffect>();
             musicSounds.Add(Content.Load<SoundEffect>("tracktojamto"));
+            musicSounds.Add(Content.Load<SoundEffect>("cantina"));
             sounds.Add(SoundType.Music, musicSounds);
             // etc.
         }
