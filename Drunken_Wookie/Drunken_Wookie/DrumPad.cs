@@ -10,6 +10,10 @@ namespace Drunken_Wookie
     public enum PadNames
     {
         Bass = Buttons.LeftShoulder,
+        Red = Buttons.B,
+        Yellow = Buttons.Y,
+        Blue = Buttons.X,
+        Green = Buttons.A
     }
 
     class DrumPad
