@@ -12,6 +12,9 @@ namespace Drunken_Wookie
         private Texture2D texture;
         private Vector2 position;
         private PadNames activationPad;
+        private SoundPlayer.SoundType soundType;
+
+        private bool isActivated;
 
         public Texture2D Texture
         {
@@ -25,22 +28,25 @@ namespace Drunken_Wookie
             set { position = value; }
         }
 
-        public SoundButton(PadNames _activationPad)
+        public SoundButton(PadNames _activationPad, SoundPlayer.SoundType _soundType)
         {
             activationPad = _activationPad;
+            soundType = _soundType;
         }
 
-        public void Update(DrumPad drumPad)
+        public void Update(DrumPad drumPad, SoundPlayer soundPlayer)
         {
             if(drumPad.IsJustReleased(activationPad))
             {
-                // Play my sound
+                soundPlayer.playSound(soundType);
             }
+
+            isActivated = drumPad.IsPressed(activationPad);
         }
         
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(texture, position, isActivated ? Color.Red : Color.White);
         }
     }
 }
