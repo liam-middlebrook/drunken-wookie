@@ -33,7 +33,8 @@ namespace Drunken_Wookie
             starwarsSounds.Add(Content.Load<SoundEffect>("forcestrong"));
             starwarsSounds.Add(Content.Load<SoundEffect>("leia_what"));
             starwarsSounds.Add(Content.Load<SoundEffect>("luke_badfeel"));
-            starwarsSounds.Add(Content.Load<SoundEffect>("yoda_doordonot"));
+            starwarsSounds.Add(Content.Load<SoundEffect>("swvader02"));
+            starwarsSounds.Add(Content.Load<SoundEffect>("WilHelmScream"));
             sounds.Add(SoundType.Starwars, starwarsSounds);
 
             List<SoundEffect> laserSounds = new List<SoundEffect>();
