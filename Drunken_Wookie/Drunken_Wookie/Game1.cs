@@ -59,10 +59,13 @@ namespace Drunken_Wookie
             Texture2D laserTex = Content.Load<Texture2D>("laser");
             Texture2D chewbaccaTex = Content.Load<Texture2D>("chewbacca");
             Texture2D characterTex = Content.Load<Texture2D>("characters");
+            Texture2D r2d2Tex = Content.Load<Texture2D>("R2D2");
 
-            soundButtons.Add(new SoundButton(PadNames.Bass, SoundPlayer.SoundType.Laser, laserTex, new Vector2(000, 100)));
-            soundButtons.Add(new SoundButton(PadNames.Red, SoundPlayer.SoundType.Wookie, chewbaccaTex, new Vector2(300, 200)));
-            soundButtons.Add(new SoundButton(PadNames.Yellow, SoundPlayer.SoundType.Starwars, characterTex, new Vector2(500, 0)));
+            soundButtons.Add(new SoundButton(PadNames.Blue, SoundPlayer.SoundType.Laser, laserTex, new Vector2(300, 100)));
+            soundButtons.Add(new SoundButton(PadNames.Red, SoundPlayer.SoundType.Wookie, chewbaccaTex, new Vector2(000, 000)));
+            soundButtons.Add(new SoundButton(PadNames.Yellow, SoundPlayer.SoundType.Starwars, characterTex, new Vector2(100, 100)));
+            soundButtons.Add(new SoundButton(PadNames.Green, SoundPlayer.SoundType.R2D2, r2d2Tex, new Vector2(500, 200)));
+            soundButtons.Add(new SoundButton(PadNames.Bass, SoundPlayer.SoundType.Music, r2d2Tex, new Vector2(5000, 2000)));
 
             backgroundTex = Content.Load<Texture2D>("bg");
             // TODO: use this.Content to load your game content here
