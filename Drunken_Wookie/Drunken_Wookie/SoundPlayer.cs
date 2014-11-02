@@ -15,25 +15,22 @@ namespace Drunken_Wookie
         {
             Wookie,
             Starwars,
-            Laser
+            Laser,
+            Music
         };
 
         private Dictionary<SoundType, List<SoundEffect>> sounds = new Dictionary<SoundType, List<SoundEffect>>();
 
         public void LoadSounds(ContentManager Content) {
             List<SoundEffect> wookieSounds = new List<SoundEffect>();
-            wookieSounds.Add(Content.Load<SoundEffect>("sound/chewbacca_01"));
-            wookieSounds.Add(Content.Load<SoundEffect>("sound/chewbacca_02"));
-            wookieSounds.Add(Content.Load<SoundEffect>("sound/chewbacca_03"));
-            wookieSounds.Add(Content.Load<SoundEffect>("sound/chewbacca_04"));
-            wookieSounds.Add(Content.Load<SoundEffect>("sound/chewbacca_05"));
+            wookieSounds.Add(Content.Load<SoundEffect>("chewbacca_02"));
+            wookieSounds.Add(Content.Load<SoundEffect>("chewbacca_03"));
+            wookieSounds.Add(Content.Load<SoundEffect>("chewbacca_04"));
+            wookieSounds.Add(Content.Load<SoundEffect>("chewbacca_05"));
             sounds.Add(SoundType.Wookie, wookieSounds);
 
             List<SoundEffect> starwarsSounds = new List<SoundEffect>();
-            starwarsSounds.Add(Content.Load<SoundEffect>("darthvader_anger"));
-            starwarsSounds.Add(Content.Load<SoundEffect>("darthvader_yourfather"));
             starwarsSounds.Add(Content.Load<SoundEffect>("forcestrong"));
-            starwarsSounds.Add(Content.Load<SoundEffect>("hansolo_badfeeling"));
             sounds.Add(SoundType.Starwars, starwarsSounds);
 
             List<SoundEffect> laserSounds = new List<SoundEffect>();
@@ -50,14 +47,16 @@ namespace Drunken_Wookie
             laserSounds.Add(Content.Load<SoundEffect>("laser_11"));
             sounds.Add(SoundType.Laser, laserSounds);
 
-
+            List<SoundEffect> musicSounds = new List<SoundEffect>();
+            musicSounds.Add(Content.Load<SoundEffect>("tracktojamto"));
+            sounds.Add(SoundType.Music, musicSounds);
             // etc.
         }
 
         public void playSound(SoundType soundType)
         {
             Random rand = new Random();
-            sounds[soundType][rand.Next(0, sounds[soundType].Count)].Play();
+            sounds[soundType][rand.Next(0, sounds[soundType].Count) - 1].Play();
         }
 
     }
