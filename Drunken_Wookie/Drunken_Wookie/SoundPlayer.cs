@@ -34,7 +34,6 @@ namespace Drunken_Wookie
             sounds.Add(SoundType.Starwars, starwarsSounds);
 
             List<SoundEffect> laserSounds = new List<SoundEffect>();
-            laserSounds.Add(Content.Load<SoundEffect>("laser_01"));
             laserSounds.Add(Content.Load<SoundEffect>("laser_02"));
             laserSounds.Add(Content.Load<SoundEffect>("laser_03"));
             laserSounds.Add(Content.Load<SoundEffect>("laser_04"));
