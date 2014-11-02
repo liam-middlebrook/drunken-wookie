@@ -41,9 +41,11 @@ namespace Drunken_Wookie
 
             drumPad = new DrumPad(PlayerIndex.One);
 
+            soundButtons.Add(new SoundButton(PadNames.Bass, SoundPlayer.SoundType.Laser));
+            soundButtons.Add(new SoundButton(PadNames.Red, SoundPlayer.SoundType.Wookie));
 
-            base.Initialize();
             soundPlayer = new SoundPlayer();
+            base.Initialize();
         }
 
         /// <summary>
@@ -79,7 +81,7 @@ namespace Drunken_Wookie
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-
+            drumPad.Update();
             foreach(SoundButton sndBtn in soundButtons)
             {
                 sndBtn.Update(drumPad, soundPlayer);
@@ -101,7 +103,7 @@ namespace Drunken_Wookie
             spriteBatch.Begin();
             foreach (SoundButton sndBtn in soundButtons)
             {
-                sndBtn.Draw(spriteBatch);
+                //sndBtn.Draw(spriteBatch);
             }
             spriteBatch.End();
             base.Draw(gameTime);
