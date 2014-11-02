@@ -16,7 +16,8 @@ namespace Drunken_Wookie
             Wookie,
             Starwars,
             Laser,
-            Music
+            Music,
+            R2D2
         };
 
         private Dictionary<SoundType, List<SoundEffect>> sounds = new Dictionary<SoundType, List<SoundEffect>>();
@@ -33,6 +34,8 @@ namespace Drunken_Wookie
             starwarsSounds.Add(Content.Load<SoundEffect>("forcestrong"));
             starwarsSounds.Add(Content.Load<SoundEffect>("leia_what"));
             starwarsSounds.Add(Content.Load<SoundEffect>("luke_badfeel"));
+            starwarsSounds.Add(Content.Load<SoundEffect>("swvader02"));
+            starwarsSounds.Add(Content.Load<SoundEffect>("WilHelmScream"));
             sounds.Add(SoundType.Starwars, starwarsSounds);
 
             List<SoundEffect> laserSounds = new List<SoundEffect>();
@@ -48,8 +51,18 @@ namespace Drunken_Wookie
             laserSounds.Add(Content.Load<SoundEffect>("laser_11"));
             sounds.Add(SoundType.Laser, laserSounds);
 
+            List<SoundEffect> r2d2Sounds = new List<SoundEffect>();
+            r2d2Sounds.Add(Content.Load<SoundEffect>("R2D2a"));
+            r2d2Sounds.Add(Content.Load<SoundEffect>("R2D2b"));
+            r2d2Sounds.Add(Content.Load<SoundEffect>("R2D2c"));
+            r2d2Sounds.Add(Content.Load<SoundEffect>("R2D2d"));
+            r2d2Sounds.Add(Content.Load<SoundEffect>("R2D2e"));
+            r2d2Sounds.Add(Content.Load<SoundEffect>("R2D2f"));
+            sounds.Add(SoundType.R2D2, r2d2Sounds);
+
             List<SoundEffect> musicSounds = new List<SoundEffect>();
             musicSounds.Add(Content.Load<SoundEffect>("tracktojamto"));
+            musicSounds.Add(Content.Load<SoundEffect>("cantina"));
             sounds.Add(SoundType.Music, musicSounds);
             // etc.
         }
