@@ -30,11 +30,6 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="chewbacca_01.wav">
-      <Name>chewbacca_01</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
     <Compile Include="chewbacca_02.wav">
       <Name>chewbacca_02</Name>
       <Importer>WavImporter</Importer>
@@ -55,28 +50,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="darthvader_anger.wav">
-      <Name>darthvader_anger</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="darthvader_yourfather.wav">
-      <Name>darthvader_yourfather</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
     <Compile Include="forcestrong.wav">
       <Name>forcestrong</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="hansolo_badfeeling.wav">
-      <Name>hansolo_badfeeling</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="laser_01.wav">
-      <Name>laser_01</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
@@ -137,11 +112,6 @@
     </Compile>
     <Compile Include="luke_badfeel.WAV">
       <Name>luke_badfeel</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="r2d2_01.wav">
-      <Name>r2d2_01</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>

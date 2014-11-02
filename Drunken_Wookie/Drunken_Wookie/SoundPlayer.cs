@@ -56,7 +56,7 @@ namespace Drunken_Wookie
         public void playSound(SoundType soundType)
         {
             Random rand = new Random();
-            sounds[soundType][rand.Next(0, sounds[soundType].Count) - 1].Play();
+            sounds[soundType][rand.Next(0, sounds[soundType].Count)].Play();
         }
 
     }
