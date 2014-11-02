@@ -21,7 +21,7 @@ namespace Drunken_Wookie
         private SoundPlayer soundPlayer;
         private DrumPad drumPad;
         private List<SoundButton> soundButtons;
-
+        private Texture2D backgroundTex;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -40,10 +40,7 @@ namespace Drunken_Wookie
             soundButtons = new List<SoundButton>();
 
             drumPad = new DrumPad(PlayerIndex.One);
-
-            soundButtons.Add(new SoundButton(PadNames.Bass, SoundPlayer.SoundType.Laser));
-            soundButtons.Add(new SoundButton(PadNames.Red, SoundPlayer.SoundType.Wookie));
-
+            
             soundPlayer = new SoundPlayer();
             base.Initialize();
         }
@@ -58,6 +55,16 @@ namespace Drunken_Wookie
             spriteBatch = new SpriteBatch(GraphicsDevice);
             soundPlayer.LoadSounds(Content);
 
+
+            Texture2D laserTex = Content.Load<Texture2D>("laser");
+            Texture2D chewbaccaTex = Content.Load<Texture2D>("chewbacca");
+            Texture2D characterTex = Content.Load<Texture2D>("characters");
+
+            soundButtons.Add(new SoundButton(PadNames.Bass, SoundPlayer.SoundType.Laser, laserTex, new Vector2(000, 100)));
+            soundButtons.Add(new SoundButton(PadNames.Red, SoundPlayer.SoundType.Wookie, chewbaccaTex, new Vector2(300, 200)));
+            soundButtons.Add(new SoundButton(PadNames.Yellow, SoundPlayer.SoundType.Starwars, characterTex, new Vector2(500, 0)));
+
+            backgroundTex = Content.Load<Texture2D>("bg");
             // TODO: use this.Content to load your game content here
         }
 
@@ -101,9 +108,11 @@ namespace Drunken_Wookie
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+            spriteBatch.Draw(backgroundTex, new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White);
+            
             foreach (SoundButton sndBtn in soundButtons)
             {
-                //sndBtn.Draw(spriteBatch);
+                sndBtn.Draw(spriteBatch);
             }
             spriteBatch.End();
             base.Draw(gameTime);

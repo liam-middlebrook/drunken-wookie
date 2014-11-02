@@ -16,22 +16,12 @@ namespace Drunken_Wookie
 
         private bool isActivated;
 
-        public Texture2D Texture
-        {
-            get { return texture; }
-            set { texture = value; }
-        }
-
-        public Vector2 Position
-        {
-            get { return position; }
-            set { position = value; }
-        }
-
-        public SoundButton(PadNames _activationPad, SoundPlayer.SoundType _soundType)
+        public SoundButton(PadNames _activationPad, SoundPlayer.SoundType _soundType, Texture2D _texture, Vector2 _position)
         {
             activationPad = _activationPad;
             soundType = _soundType;
+            texture = _texture;
+            position = _position;
         }
 
         public void Update(DrumPad drumPad, SoundPlayer soundPlayer)
