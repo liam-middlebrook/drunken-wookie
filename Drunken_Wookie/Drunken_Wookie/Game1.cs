@@ -18,7 +18,9 @@ namespace Drunken_Wookie
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private SoundPlayer SoundPlayer;
+        private SoundPlayer soundPlayer;
+        private DrumPad drumPad;
+        private List<SoundButton> soundButtons;
 
         public Game1()
         {
@@ -35,9 +37,13 @@ namespace Drunken_Wookie
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            soundButtons = new List<SoundButton>();
+
+            drumPad = new DrumPad(PlayerIndex.One);
+
 
             base.Initialize();
-            SoundPlayer = new SoundPlayer();
+            soundPlayer = new SoundPlayer();
         }
 
         /// <summary>
@@ -48,7 +54,7 @@ namespace Drunken_Wookie
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            SoundPlayer.loadSounds(Content);
+            soundPlayer.LoadSounds(Content);
 
             // TODO: use this.Content to load your game content here
         }
@@ -73,6 +79,11 @@ namespace Drunken_Wookie
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+
+            foreach(SoundButton sndBtn in soundButtons)
+            {
+                sndBtn.Update(drumPad, soundPlayer);
+            }
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -87,7 +98,12 @@ namespace Drunken_Wookie
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            foreach (SoundButton sndBtn in soundButtons)
+            {
+                sndBtn.Draw(spriteBatch);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
